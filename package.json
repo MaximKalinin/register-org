@@ -1,0 +1,23 @@
+{
+  "name": "register-org",
+  "version": "1.0.0",
+  "description": "test assignment for A1Systems",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximKalinin/register-org.git"
+  },
+  "author": "maxim.kalinin.work@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximKalinin/register-org/issues"
+  },
+  "homepage": "https://github.com/MaximKalinin/register-org#readme",
+  "devDependencies": {
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  }
+}
