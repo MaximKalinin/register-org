@@ -175,7 +175,7 @@ const App = ({ initialFields, setStoreFields }: IProps) => {
       comment: null
     };
     console.log('request is ', output);
-    window.alert('Форма успешно отправлена! Загляни в консоль, чтобы увидеть запрос');
+    window.alert('Заявление успешно отправлено! Загляни в консоль, чтобы увидеть запрос');
   };
 
   return (

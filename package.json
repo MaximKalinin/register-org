@@ -4,7 +4,7 @@
   "description": "test assignment for A1Systems",
   "main": "index.js",
   "scripts": {
-    "bundle": "webpack",
+    "bundle": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "check-types": "tsc --resolveJsonModule",
