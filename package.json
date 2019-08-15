@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "check-types": "tsc",
-    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix"
+    "predeploy": "npm run bundle",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/MaximKalinin/register-org/issues"
   },
-  "homepage": "https://github.com/MaximKalinin/register-org#readme",
+  "homepage": "http://maximkalinin.github.io/register-org",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -45,6 +46,7 @@
   "dependencies": {
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
