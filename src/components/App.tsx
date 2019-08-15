@@ -5,12 +5,30 @@ import Field from './Field/Field';
 import ProgressBar from './ProgressBar/ProgressBar';
 import Buttons from './Buttons/Buttons';
 import './App.scss';
+import { IStore } from '../store/reducer';
 
 const initialState = {
   stage: 0
 };
 
-const App = ({ initialFields, setStoreFields }) => {
+export interface IField {
+  name: string,
+  required: boolean,
+  id: string,
+  value: string,
+  touched: boolean,
+  valid: boolean,
+  type: string,
+  options?: Array<{ name: string, value: string }>,
+  length?: number
+}
+
+export interface IProps {
+  initialFields: IStore,
+  setStoreFields: (key: string, fields: Array<IField>) => void
+};
+
+const App = ({ initialFields, setStoreFields }: IProps) => {
   const [stage, setStage] = React.useState(initialState.stage);
   const [fields, setFields] = React.useState(initialFields.introduction);
 
@@ -21,8 +39,11 @@ const App = ({ initialFields, setStoreFields }) => {
       case 1:
         return setFields(initialFields.personal);
       case 2:
-        const format = initialFields.introduction[0].value;
-        return setFields(initialFields[format]);
+        const format: string = initialFields.introduction[0].value;
+        if (format === 'individual_organization' || format === 'organization') {
+          return setFields(initialFields[format]);
+        }
+        return;
       default:
         return;
     }
@@ -79,7 +100,7 @@ const App = ({ initialFields, setStoreFields }) => {
     }
   };
 
-  const validate = (id: string, thisFields: {}) => {
+  const validate = (id: string, thisFields: Array<IField>) => {
     const newFields = thisFields.map(field => {
       if (field.id !== id) {
         return field;
@@ -164,7 +185,7 @@ const App = ({ initialFields, setStoreFields }) => {
         <form>
           <ProgressBar stage={stage} />
           <div>
-            {fields.map(field => <Field key={field.id} field={field} onChange={onChange} validate={() => validate(field.id)} blurHandler={blurHandler} />)}
+            {fields.map(field => <Field key={field.id} field={field} onChange={onChange} blurHandler={blurHandler} />)}
           </div>
           <Buttons onContinue={next} onBack={prev} allowNext={fields.reduce(
             (isAllValid: boolean, field) => (isAllValid && field.valid),
@@ -175,15 +196,15 @@ const App = ({ initialFields, setStoreFields }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: IStore) => {
   return {
     initialFields: state
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: any) => {
   return {
-    setStoreFields: (key, fields) => dispatch({ type: 'SET_FIELDS', key, value: fields })
+    setStoreFields: (key: string, fields: Array<IField>) => dispatch({ type: 'SET_FIELDS', key, value: fields })
   };
 };
 

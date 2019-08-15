@@ -1,38 +1,17 @@
 import * as React from 'react';
 
 import './Field.scss';
+import { IField } from '../App';
 
 export interface IProps {
-  field: {
-    name: string,
-    required: boolean,
-    id: string,
-    value: string,
-    touched: boolean,
-    valid: boolean,
-    options?: Array<{
-      name: string,
-      value: string
-    }>
-  };
+  field: IField;
   onChange: (event: any) => void;
-  validate: () => void;
-  blurHandler: () => void;
+  blurHandler: (event: any) => void;
 }
 
-const initialState = {
-  organizationFormat: '',
-};
-
 const Field = (props: IProps) => {
-  const { field, onChange, validate, blurHandler } = props;
-  const [state, setState] = React.useState();
-  const handleChange = (event) => {
-    return setState({
-      ...state,
-      organizationFormat: event.target.value
-    });
-  };
+  const { field, onChange, blurHandler } = props;
+
   if (field.options) {
     return (
       <div className="field">

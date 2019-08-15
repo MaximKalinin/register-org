@@ -1,7 +1,14 @@
 import fields from '../api/fields.json';
+import { IField } from 'components/App.js';
 
-const transformedFields = {};
-Object.keys(fields).forEach(key => {
+const transformedFields: {
+  [key: string]: Array<IField>
+} = {};
+
+Object.keys(fields).forEach((key: string) => {
+  if (!fields.hasOwnProperty(key)) {
+    return;
+  }
   transformedFields[key] = fields[key].map(field => {
     return {
       ...field,
@@ -37,7 +44,19 @@ const initialState = {
   ]
 };
 
-const reducer = (state = initialState, action) => {
+export interface IStore {
+  introduction: Array<IField>,
+  organization: Array<IField>,
+  individual_organization: Array<IField>,
+  personal: Array<IField>
+};
+
+interface IAction {
+  type: string;
+  [key: string]: any;
+}
+
+const reducer = (state = initialState, action: IAction) => {
   switch (action.type) {
     case 'SET_FIELDS':
       return {

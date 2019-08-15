@@ -8,7 +8,7 @@
     "bundle": "webpack",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "check-types": "tsc",
+    "check-types": "tsc --resolveJsonModule",
     "predeploy": "npm run bundle",
     "deploy": "gh-pages -d dist"
   },
@@ -46,6 +46,7 @@
   "dependencies": {
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "@types/react-redux": "^7.1.1",
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
