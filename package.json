@@ -4,13 +4,13 @@
   "description": "test assignment for A1Systems",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "webpack",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "check-types": "tsc --resolveJsonModule",
     "predeploy": "npm run bundle",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,11 +29,17 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
     "node-sass": "^4.12.0",
+    "react-test-renderer": "^16.9.0",
     "sass-loader": "^7.2.0",
     "style-loader": "^1.0.0",
     "tslint": "^5.18.0",
@@ -54,5 +60,10 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
   },
-  "browserslist": "> 0.25%, not dead"
+  "browserslist": "> 0.25%, not dead",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  }
 }

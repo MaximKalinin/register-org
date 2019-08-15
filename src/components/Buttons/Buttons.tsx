@@ -17,7 +17,7 @@ const Buttons = (props: IProps) => {
   return (
     <div className="buttons">
       <button type="button" onClick={onBack}>Назад</button>
-      <button type="button" onClick={continueFunction} disabled={!allowNext}>Отправить</button>
+      <button type="button" onClick={continueFunction} disabled={!allowNext} id="next-button">Отправить</button>
     </div >
   );
 };
