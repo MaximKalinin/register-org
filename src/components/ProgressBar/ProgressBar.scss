@@ -1,0 +1,35 @@
+.progress-bar__wrapper {
+  margin-bottom: 15px;
+  span {
+    padding-bottom: 5px;
+    display: block;
+  }
+}
+.progress-bar {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background: rgb(229, 229, 229);
+}
+.progress-bar:after {
+  transition: width 1s ease-out;
+  position: absolute;
+  content: '';
+  background: rgb(94, 94, 94);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+}
+.progress-bar.stage-0:after {
+  width: 30%;
+}
+.progress-bar.stage-1:after {
+  width: 60%;
+}
+.progress-bar.stage-2:after {
+  width: 90%;
+}
+.progress-bar.stage-3:after {
+  width: 100%;
+}

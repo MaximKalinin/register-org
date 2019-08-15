@@ -23,9 +23,9 @@
       true,
       "tabs"
     ],
-    "max-line-height": [
+    "max-line-length": [
       true,
-      250
+      130
     ],
     "no-trailing-whitespace": true,
     "trailing-coma": [

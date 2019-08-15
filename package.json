@@ -8,7 +8,8 @@
     "bundle": "webpack",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "check-types": "tsc"
+    "check-types": "tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
     "style-loader": "^1.0.0",
     "tslint": "^5.18.0",
     "tslint-immutable": "^6.0.1",
@@ -43,7 +46,10 @@
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   },
   "browserslist": "> 0.25%, not dead"
 }

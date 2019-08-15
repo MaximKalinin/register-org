@@ -1,0 +1,51 @@
+.field {
+  // margin-top: 15px;
+  border-top: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
+  padding: 18px 0;
+  display: flex;
+  flex-direction: column;
+  label.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input {
+      width: 810px;
+      padding: 11px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    // input.invalid {
+    //   border-color: red;
+    // }
+    // input.valid {
+    //   border-color: green;
+    // }
+  }
+  label.required{
+    span:after {
+      content: '*';
+      color: red;
+    }
+  }
+  label.valid {
+    input {
+      border-color: green;
+      outline-color: green;
+    }
+  }
+  label.invalid {
+    input {
+      border-color: red;
+      outline-color: red;
+    }
+  }
+  label:not(.flex):first-child {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}
+.field:last-child {
+  border-bottom: 1px solid #ccc;
+}

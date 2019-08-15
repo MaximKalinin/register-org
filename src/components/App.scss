@@ -1,0 +1,23 @@
+main {
+  min-height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  padding: 150px 0;
+  box-sizing: border-box;
+  background: rgb(234, 234, 234);
+  overflow-x: scroll;
+  div {
+    margin: auto;
+    max-width: 1140px;
+    min-width: 200px;
+    h3 {
+      font-weight: 400;
+    }
+    // display: inline-block;
+  }
+  form {
+    padding: 30px;
+    background: white;
+  }
+}

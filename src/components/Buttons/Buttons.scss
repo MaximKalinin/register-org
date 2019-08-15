@@ -1,0 +1,15 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  button {
+    background: white;
+    border-radius: 2px;
+    padding: 10px 15px;
+    border: 1px solid rgb(94, 94, 94);
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}

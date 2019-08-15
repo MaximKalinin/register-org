@@ -1,0 +1,122 @@
+{
+  "individual_organization": [
+    {
+      "name": "ОГРНИП",
+      "id": "OGRNIP",
+      "required": true,
+      "type": "number",
+      "length": 13
+    },
+    {
+      "name": "СНИЛС",
+      "id": "SNILS",
+      "required": true,
+      "type": "number",
+      "length": 11
+    },
+    {
+      "name": "ИНН",
+      "id": "INN",
+      "required": true,
+      "type": "number",
+      "length": 12
+    },
+    {
+      "name": "Адрес E-Mail",
+      "id": "E",
+      "required": true,
+      "type": "email"
+    }
+  ],
+  "organization": [
+    {
+      "name": "Организация",
+      "id": "O",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Подразделение",
+      "id": "OU",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Должность или звание",
+      "id": "T",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "ОГРН",
+      "id": "OGRN",
+      "required": true,
+      "type": "number",
+      "length": 13
+    },
+    {
+      "name": "СНИЛС",
+      "id": "SNILS",
+      "required": true,
+      "type": "number",
+      "length": 11
+    },
+    {
+      "name": "ИНН",
+      "id": "INN",
+      "required": true,
+      "type": "number",
+      "length": 12
+    },
+    {
+      "name": "Адрес E-Mail",
+      "id": "E",
+      "required": true,
+      "type": "email"
+    }
+  ],
+  "personal": [
+    {
+      "name": "Общее имя",
+      "id": "CN",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Фамилия",
+      "id": "SN",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Имя и отчество",
+      "id": "G",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Страна/регион",
+      "id": "C",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Область",
+      "id": "S",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Город",
+      "id": "L",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Адрес",
+      "id": "STREET",
+      "required": true,
+      "type": "text"
+    }
+  ]
+}
